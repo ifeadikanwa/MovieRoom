@@ -5,4 +5,19 @@
     <string name="trending">Trending</string>
     <string name="placeholder">Placeholder</string>
     <string name="discover">Discover</string>
+    <string name="overview">Overview</string>
+    <string name="vote_count">Vote Count</string>
+    <string name="voting_average">Voting Average</string>
+    <string name="language">Language</string>
+    <string name="want">Want</string>
+    <string name="watched">Watched</string>
+    <string name="watched_movie">watched movie</string>
+    <string name="want_movie">want movie</string>
+    <string name="movie_description">movie description</string>
+    <string name="movie_voting_count">movie voting count</string>
+    <string name="movie_voting_average">movie voting average</string>
+    <string name="movie_language">movie language</string>
+    <string name="movie_title">movie title</string>
+    <string name="movie_poster">movie poster</string>
+    <string name="list_of_trending_movies">list of trending movies</string>
 </resources>
