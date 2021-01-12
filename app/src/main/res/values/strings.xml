@@ -20,4 +20,8 @@
     <string name="movie_title">movie title</string>
     <string name="movie_poster">movie poster</string>
     <string name="list_of_trending_movies">list of trending movies</string>
+    <string name="movie_genre">movie genre</string>
+    <string name="one_space"></string>
+    <string name="watched_checkbox">watched checkbox</string>
+    <string name="list_of_my_movies">list of my movies</string>
 </resources>
