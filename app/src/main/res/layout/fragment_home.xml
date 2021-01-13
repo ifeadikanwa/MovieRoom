@@ -35,47 +35,96 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/placeholder" />
+                android:text="@string/action"
+                android:contentDescription="@string/action"/>
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/placeholder" />
+                android:text="@string/adventure"
+                android:contentDescription="@string/adventure"/>
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/placeholder" />
+                android:text="@string/romance"
+                android:contentDescription="@string/romance"/>
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/placeholder" />
+                android:text="@string/comedy"
+                android:contentDescription="@string/comedy"/>
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/placeholder" />
+                android:text="@string/drama"
+                android:contentDescription="@string/drama"/>
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/placeholder" />
+                android:text="@string/family"
+                android:contentDescription="@string/family"/>
 
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/placeholder" />
+                android:text="@string/crime"
+                android:contentDescription="@string/crime"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/fantasy"
+                android:contentDescription="@string/fantasy"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/horror"
+                android:contentDescription="@string/horror"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/mystery"
+                android:contentDescription="@string/mystery"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/science_fiction"
+                android:contentDescription="@string/science_fiction"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/thriller"
+                android:contentDescription="@string/thriller"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/animation"
+                android:contentDescription="@string/animation"/>
         </LinearLayout>
     </HorizontalScrollView>
 
