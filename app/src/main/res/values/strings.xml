@@ -24,4 +24,7 @@
     <string name="one_space"></string>
     <string name="watched_checkbox">watched checkbox</string>
     <string name="list_of_my_movies">list of my movies</string>
+    <string name="list_of_movies_to_discover">list of movies to discover</string>
+    <string name="my_movies">My Movies</string>
+    <string name="home">Home</string>
 </resources>

@@ -96,9 +96,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="@dimen/small_margin"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        android:clipToPadding="false"
         android:contentDescription="@string/list_of_trending_movies"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/trendingTextView" />
+        app:layout_constraintTop_toBottomOf="@id/trendingTextView"
+        tools:listitem="@layout/display_movies_list_item"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
