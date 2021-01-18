@@ -45,6 +45,18 @@
         tools:layout_editor_absoluteX="0dp"
         tools:text="Action, Drama, Thriller" />
 
+
+    <TextView
+        android:id="@+id/releaseDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/movie_release_date"
+        app:layout_constraintTop_toBottomOf="@+id/genreTextView"
+        tools:text="2014" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -53,7 +65,8 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genreTextView">
+        app:layout_constraintTop_toBottomOf="@id/releaseDateTextView"
+        tools:layout_editor_absoluteY="240dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
