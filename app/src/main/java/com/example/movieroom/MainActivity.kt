@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.movieroom.databinding.ActivityMainBinding
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         //setup bottom navigation bar
         NavigationUI.setupWithNavController(binding.bottomNavBar, navController )
+
 
     }
 }
