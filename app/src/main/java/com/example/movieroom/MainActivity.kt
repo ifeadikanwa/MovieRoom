@@ -1,11 +1,9 @@
 package com.example.movieroom
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.movieroom.databinding.ActivityMainBinding
 
@@ -23,5 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         //setup bottom navigation bar
         NavigationUI.setupWithNavController(binding.bottomNavBar, navController )
+
     }
 }
