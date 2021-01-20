@@ -4,13 +4,13 @@ import com.google.gson.annotations.SerializedName
 
 //movie data class that hold properties every movie displayed should have
 //Going to be used by our Gson converter to deserialize the Json results
-data class Movie(
+data class MoviesResult(
         @SerializedName("results")
-        val results : ArrayList<Result>
+        val movies : ArrayList<Movie>
 
         )
 
-data class Result(
+data class Movie(
         @SerializedName("id")
         val id : Int,
 

@@ -41,4 +41,5 @@
     <string name="thriller">Thriller</string>
     <string name="animation">Animation</string>
     <string name="movie_release_date">movie release date</string>
+    <string name="fullImageUrl">https://image.tmdb.org/t/p/original%s</string>
 </resources>

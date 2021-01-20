@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:orientation="vertical"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/display_movie_poster"
+<!--    the properties of the movie data class is used to fill this list item so -->
+<!--    create a data binding variable with the movie data class-->
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movieroom.Movie" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:src="@tools:sample/avatars"/>
+        android:padding="8dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/display_movie_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Happiness is a butterfly butterfly butterfly"
-        android:layout_gravity="center"
-        android:gravity="center"/>
+        <ImageView
+            android:id="@+id/display_movie_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            imageUrl="@{@string/fullImageUrl(movie.posterUrl)}"
+            tools:src="@tools:sample/avatars"/>
 
+        <TextView
+            android:id="@+id/display_movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{movie.title}"
+            android:layout_gravity="center"
+            android:gravity="center"
+            tools:text="Happiness is a butterfly butterfly butterfly"/>
 
-</LinearLayout>
+    </LinearLayout>
+</layout>
