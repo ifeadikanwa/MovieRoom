@@ -3,6 +3,7 @@ package com.example.movieroom
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -22,4 +23,13 @@ fun bindImage(imageView: ImageView, imgUrl : String){
 //                .error(R.drawable.ic_broken_image))
             .into(imageView)
     }
+}
+
+//Binding adapter for initializing our recyclerview adapter with list data
+//using binding adapter to set the recyclerview data will cause data binding to observe the live data the holds the list of movies
+//then this adapter wwill be called automatically whenever the movie list changes
+@BindingAdapter("listData")
+fun bindRecyclerView(recyclerView : RecyclerView, data : List<Movie>?) {
+    val adapter = recyclerView.adapter as DisplayMoviesAdapter
+    adapter.submitList(data)
 }

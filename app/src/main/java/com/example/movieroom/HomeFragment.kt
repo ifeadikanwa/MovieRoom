@@ -28,6 +28,9 @@ class HomeFragment : Fragment() {
         // Giving the binding access to the HomeViewModel
         binding.homeViewModel = viewModel
 
+        //set the recyclerview adapter
+        binding.trendingRecyclerView.adapter = DisplayMoviesAdapter()
+
         return binding.root
     }
 
