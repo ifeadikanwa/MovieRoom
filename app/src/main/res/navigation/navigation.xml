@@ -26,5 +26,9 @@
         android:id="@+id/discoverFragment"
         android:name="com.example.movieroom.DiscoverFragment"
         android:label="fragment_discover"
-        tools:layout="@layout/fragment_discover" />
+        tools:layout="@layout/fragment_discover" >
+        <argument
+            android:name="genre"
+            app:argType="com.example.movieroom.Genre" />
+    </fragment>
 </navigation>

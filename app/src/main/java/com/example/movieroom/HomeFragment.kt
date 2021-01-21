@@ -11,13 +11,14 @@ import com.example.movieroom.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
+    private lateinit var binding : FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = FragmentHomeBinding.inflate(inflater)
+        binding = FragmentHomeBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
@@ -42,7 +43,6 @@ class HomeFragment : Fragment() {
         binding.fantasyButton.setOnClickListener(discoverButtonClickListener)
         binding.horrorButton.setOnClickListener(discoverButtonClickListener)
         binding.mysteryButton.setOnClickListener(discoverButtonClickListener)
-        binding.scienceButton.setOnClickListener(discoverButtonClickListener)
         binding.thrillerButton.setOnClickListener(discoverButtonClickListener)
         binding.romanceButton.setOnClickListener(discoverButtonClickListener)
 
@@ -54,8 +54,27 @@ class HomeFragment : Fragment() {
     //navigates to the discover fragment with an argument
     //containing information about what genre the user wants to see
     private val discoverButtonClickListener = View.OnClickListener {
-        //use the view(button in this case) to find the nav controller and then proceed to navigate
-        it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDiscoverFragment())
+        //enum variable that will hold the genre type depending on the button clicked
+        var genre : Genre = Genre.Action
+
+        //assign enum value depending on button clicked
+        when(it){
+            binding.actionButton -> genre = Genre.Action
+            binding.adventureButton -> genre = Genre.Adventure
+            binding.animationButton -> genre = Genre.Animation
+            binding.comedyButton -> genre = Genre.Comedy
+            binding.crimeButton -> genre = Genre.Crime
+            binding.dramaButton -> genre = Genre.Drama
+            binding.familyButton -> genre = Genre.Family
+            binding.fantasyButton -> genre = Genre.Fantasy
+            binding.horrorButton -> genre = Genre.Horror
+            binding.mysteryButton -> genre = Genre.Mystery
+            binding.romanceButton -> genre = Genre.Romance
+            binding.thrillerButton -> genre = Genre.Thriller
+        }
+
+        //use the view(button in this case) to find the nav controller and then proceed to navigate with the genre as an argument
+        it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDiscoverFragment(genre))
     }
 
 

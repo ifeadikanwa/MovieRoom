@@ -79,10 +79,6 @@ interface MovieApiService{
     @GET("discover/movie?api_key=${API_KEY}&with_genres=10749&sort_by=vote_average.desc")
     suspend fun getRomanceMovies() : MoviesResult
 
-    //get top science fiction movies
-    @GET("discover/movie?api_key=${API_KEY}&with_genres=878&sort_by=vote_average.desc")
-    suspend fun getScienceFictionMovies() : MoviesResult
-
     //get top thriller movies
     @GET("discover/movie?api_key=${API_KEY}&with_genres=53&sort_by=vote_average.desc")
     suspend fun getThrillerMovies() : MoviesResult

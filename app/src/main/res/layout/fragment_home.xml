@@ -123,13 +123,6 @@
                     android:text="@string/mystery"
                     android:contentDescription="@string/mystery"/>
 
-                <Button
-                    android:id="@+id/scienceButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="@string/science_fiction"
-                    android:contentDescription="@string/science_fiction"/>
 
                 <Button
                     android:id="@+id/thrillerButton"
