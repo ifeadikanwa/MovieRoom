@@ -12,10 +12,12 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_myMoviesFragment"
-            app:destination="@id/myMoviesFragment" />
+            app:destination="@id/myMoviesFragment"
+            app:popUpTo="@id/homeFragment" />
         <action
             android:id="@+id/action_homeFragment_to_discoverFragment"
-            app:destination="@id/discoverFragment" />
+            app:destination="@id/discoverFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/myMoviesFragment"

@@ -23,6 +23,14 @@ class MainActivity : AppCompatActivity() {
         //setup bottom navigation bar
         NavigationUI.setupWithNavController(binding.bottomNavBar, navController )
 
+        //setup navigationUI for the action bar so the up button is controlled by navigation backstack setting
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
+    }
+
+    //use the nav controller to navigate up
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.navHostFragment)
+        return navController.navigateUp()
     }
 }
