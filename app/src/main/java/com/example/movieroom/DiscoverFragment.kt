@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.movieroom.databinding.FragmentDiscoverBinding
 
 
@@ -29,6 +30,18 @@ class DiscoverFragment : Fragment() {
 
         // Inflate the layout for this fragment
         binding = FragmentDiscoverBinding.inflate(inflater)
+
+        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
+        binding.lifecycleOwner = this
+
+        //create viewModelFactory and pass in genre
+        val viewModelFactory = DiscoverViewModelFactory(genre)
+
+        //use the viewModelFactory to create the viewModel
+        var viewModel = ViewModelProvider(this, viewModelFactory).get(DiscoverViewModel::class.java)
+
+        //Give the binding access to the viewModel
+        binding.discoverViewModel = viewModel
 
         return binding.root
     }
