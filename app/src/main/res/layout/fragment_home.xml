@@ -44,6 +44,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/actionButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -51,6 +52,7 @@
                     android:contentDescription="@string/action"/>
 
                 <Button
+                    android:id="@+id/adventureButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -58,6 +60,7 @@
                     android:contentDescription="@string/adventure"/>
 
                 <Button
+                    android:id="@+id/romanceButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -65,6 +68,7 @@
                     android:contentDescription="@string/romance"/>
 
                 <Button
+                    android:id="@+id/comedyButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -72,6 +76,7 @@
                     android:contentDescription="@string/comedy"/>
 
                 <Button
+                    android:id="@+id/dramaButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -79,6 +84,7 @@
                     android:contentDescription="@string/drama"/>
 
                 <Button
+                    android:id="@+id/familyButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -86,6 +92,7 @@
                     android:contentDescription="@string/family"/>
 
                 <Button
+                    android:id="@+id/crimeButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -93,6 +100,7 @@
                     android:contentDescription="@string/crime"/>
 
                 <Button
+                    android:id="@+id/fantasyButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -100,6 +108,7 @@
                     android:contentDescription="@string/fantasy"/>
 
                 <Button
+                    android:id="@+id/horrorButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -107,6 +116,7 @@
                     android:contentDescription="@string/horror"/>
 
                 <Button
+                    android:id="@+id/mysteryButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -114,6 +124,7 @@
                     android:contentDescription="@string/mystery"/>
 
                 <Button
+                    android:id="@+id/scienceButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -121,6 +132,7 @@
                     android:contentDescription="@string/science_fiction"/>
 
                 <Button
+                    android:id="@+id/thrillerButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -128,6 +140,7 @@
                     android:contentDescription="@string/thriller"/>
 
                 <Button
+                    android:id="@+id/animationButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"

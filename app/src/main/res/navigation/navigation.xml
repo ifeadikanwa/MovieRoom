@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_homeFragment_to_myMoviesFragment"
             app:destination="@id/myMoviesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment" />
     </fragment>
     <fragment
         android:id="@+id/myMoviesFragment"
         android:name="com.example.movieroom.MyMoviesFragment"
         android:label="fragment_my_movies"
         tools:layout="@layout/fragment_my_movies" />
+    <fragment
+        android:id="@+id/discoverFragment"
+        android:name="com.example.movieroom.DiscoverFragment"
+        android:label="fragment_discover"
+        tools:layout="@layout/fragment_discover" />
 </navigation>

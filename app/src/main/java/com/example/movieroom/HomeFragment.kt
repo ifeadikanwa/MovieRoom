@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.example.movieroom.databinding.DisplayMoviesListItemBinding
+import androidx.navigation.findNavController
 import com.example.movieroom.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -31,8 +31,34 @@ class HomeFragment : Fragment() {
         //set the recyclerview adapter
         binding.trendingRecyclerView.adapter = DisplayMoviesAdapter()
 
+        //set onClickListener for all discover buttons
+        binding.actionButton.setOnClickListener(discoverButtonClickListener)
+        binding.adventureButton.setOnClickListener(discoverButtonClickListener)
+        binding.animationButton.setOnClickListener(discoverButtonClickListener)
+        binding.comedyButton.setOnClickListener(discoverButtonClickListener)
+        binding.crimeButton.setOnClickListener(discoverButtonClickListener)
+        binding.dramaButton.setOnClickListener(discoverButtonClickListener)
+        binding.familyButton.setOnClickListener(discoverButtonClickListener)
+        binding.fantasyButton.setOnClickListener(discoverButtonClickListener)
+        binding.horrorButton.setOnClickListener(discoverButtonClickListener)
+        binding.mysteryButton.setOnClickListener(discoverButtonClickListener)
+        binding.scienceButton.setOnClickListener(discoverButtonClickListener)
+        binding.thrillerButton.setOnClickListener(discoverButtonClickListener)
+        binding.romanceButton.setOnClickListener(discoverButtonClickListener)
+
         return binding.root
     }
+
+    //onClickListener for all the discover buttons
+    //it identifies the button that was clicked and then
+    //navigates to the discover fragment with an argument
+    //containing information about what genre the user wants to see
+    private val discoverButtonClickListener = View.OnClickListener {
+        //use the view(button in this case) to find the nav controller and then proceed to navigate
+        it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDiscoverFragment())
+    }
+
+
 
 
 }
