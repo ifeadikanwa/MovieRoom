@@ -1,5 +1,6 @@
 package com.example.movieroom
 
+import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
@@ -32,4 +33,24 @@ fun bindImage(imageView: ImageView, imgUrl : String){
 fun bindRecyclerView(recyclerView : RecyclerView, data : List<Movie>?) {
     val adapter = recyclerView.adapter as DisplayMoviesAdapter
     adapter.submitList(data)
+}
+
+//Binding adapter that updates what's shown on the screens that fetch and display data based on the MovieApiStatus value
+@BindingAdapter("movieApiStatus")
+fun bindStatus(statusImageView : ImageView, status : MovieApiStatus?) {
+    when(status) {
+        MovieApiStatus.LOADING -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.loading_animation)
+        }
+
+        MovieApiStatus.ERROR -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_connection_error)
+        }
+
+        MovieApiStatus.DONE -> {
+            statusImageView.visibility = View.GONE
+        }
+    }
 }

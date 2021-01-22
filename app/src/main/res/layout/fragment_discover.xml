@@ -28,5 +28,13 @@
             android:contentDescription="@string/list_of_movies_to_discover"
             tools:listitem="@layout/display_movies_list_item"/>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/trendingTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            movieApiStatus="@{discoverViewModel.status}"/>
     </LinearLayout>
 </layout>

@@ -16,8 +16,8 @@ class HomeViewModel : ViewModel() {
         get() = _movies
 
     //live data for status of data fetching
-    private var _status = MutableLiveData<String>()
-    val status : LiveData<String>
+    private var _status = MutableLiveData<MovieApiStatus>()
+    val status : LiveData<MovieApiStatus>
         get() = _status
 
     init {
@@ -28,12 +28,25 @@ class HomeViewModel : ViewModel() {
         // Coroutine that will be canceled when the ViewModel is cleared.
         viewModelScope.launch {
             try {
+                //set status to loading before we attempt to fetch data
+                _status.value = MovieApiStatus.LOADING
+
                 //get trending movies
                 var response = MovieApi.retrofitService.getTrendingMovies()
+
+                //set status to done after we successfully fetch data
+                _status.value = MovieApiStatus.DONE
+
                 //store the arraylist of movies in live data
                 _movies.value = response.movies
             }
             catch (e : Exception) {
+                //set status to error if we get an exception
+                _status.value = MovieApiStatus.ERROR
+
+                //set the movie arraylist to an empty list to clear the recyclerview
+                _movies.value =  ArrayList()
+
                 Timber.i(e.toString())
             }
         }

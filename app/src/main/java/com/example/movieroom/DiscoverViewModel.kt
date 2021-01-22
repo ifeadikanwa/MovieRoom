@@ -15,8 +15,8 @@ class DiscoverViewModel(val genre: Genre) : ViewModel() {
         get() = _movies
 
     //live data for status of data fetching
-    private var _status = MutableLiveData<String>()
-    val status : LiveData<String>
+    private var _status = MutableLiveData<MovieApiStatus>()
+    val status : LiveData<MovieApiStatus>
         get() = _status
 
     init {
@@ -27,7 +27,11 @@ class DiscoverViewModel(val genre: Genre) : ViewModel() {
         // Coroutine that will be canceled when the ViewModel is cleared.
         viewModelScope.launch {
             try {
-                //using the genre value that was passed into the viewModel, identify the movie genre and fetch the movies
+                //set status to loading before we attempt to fetch data
+                _status.value = MovieApiStatus.LOADING
+
+                //using the genre value that was passed into the viewModel,
+                //identify the right movie genre and fetch the movies
                 var response = when(genre){
                     Genre.Action -> MovieApi.retrofitService.getActionMovies()
                     Genre.Adventure -> MovieApi.retrofitService.getAdventureMovies()
@@ -43,10 +47,19 @@ class DiscoverViewModel(val genre: Genre) : ViewModel() {
                     Genre.Thriller -> MovieApi.retrofitService.getThrillerMovies()
                 }
 
+                //set status to done after we successfully fetch data
+                _status.value = MovieApiStatus.DONE
+
                 //store the arraylist of movies in live data
                 _movies.value = response.movies
             }
             catch (e : Exception) {
+                //set status to error if we get an exception
+                _status.value = MovieApiStatus.ERROR
+
+                //set the movie arraylist to an empty list to clear the recyclerview
+                _movies.value =  ArrayList()
+
                 Timber.i(e.toString())
             }
         }

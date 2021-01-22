@@ -172,5 +172,14 @@
             app:layout_constraintTop_toBottomOf="@id/trendingTextView"
             tools:listitem="@layout/display_movies_list_item"/>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/trendingTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            movieApiStatus="@{homeViewModel.status}"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
