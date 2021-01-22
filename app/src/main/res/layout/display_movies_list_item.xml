@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/display_movie_poster"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="250dp"
             imageUrl="@{@string/fullImageUrl(movie.posterUrl)}"
             tools:src="@tools:sample/avatars"/>
 
