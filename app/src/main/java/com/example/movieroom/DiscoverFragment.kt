@@ -43,6 +43,9 @@ class DiscoverFragment : Fragment() {
         //Give the binding access to the viewModel
         binding.discoverViewModel = viewModel
 
+        //set the recyclerview adapter
+        binding.discoverRecyclerView.adapter = DisplayMoviesAdapter()
+
         return binding.root
     }
 
