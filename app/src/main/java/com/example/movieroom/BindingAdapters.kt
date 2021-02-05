@@ -2,6 +2,7 @@ package com.example.movieroom
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,17 +13,17 @@ import com.bumptech.glide.request.RequestOptions
 @BindingAdapter("imageUrl")
 fun bindImage(imageView: ImageView, imgUrl : String){
     //only execute this code if imageUrl is not null
-    imgUrl?.let {
+    imgUrl.let {
         //convert imageUrl to a Uri
         val imgUri = it.toUri().buildUpon().scheme("https").build()
 
         //load the image with Glide
         Glide.with(imageView.context)
-            .load(imgUri)
-            .apply(RequestOptions()
-                .placeholder(R.drawable.loading_animation)
-                .error(R.drawable.ic_broken_image))
-            .into(imageView)
+                .load(imgUri)
+                .apply(RequestOptions()
+                        .placeholder(R.drawable.loading_animation)
+                        .error(R.drawable.ic_broken_image))
+                .into(imageView)
     }
 }
 
@@ -53,4 +54,45 @@ fun bindStatus(statusImageView : ImageView, status : MovieApiStatus?) {
             statusImageView.visibility = View.GONE
         }
     }
+}
+
+//Binding adapter that coverts the genre ids to text that will be displayed
+@BindingAdapter("movieGenres")
+fun bindGenre(genreTextView : TextView, genresList : List<Int>?) {
+    //final string for the genreTextView
+    var genreString = ""
+
+    //if the genreList is not null, build the string
+    if(genresList != null){
+
+        //loop through the genreList of ids and add the correct text value to the final string
+        for(i in 0..genresList.lastIndex) {
+
+            //if it is not the first element, add a comma and space to the final string
+            if(i != 0){
+                genreString += ", "
+            }
+
+            //Add the genre text to the final string(genreString) when a match for the id is found
+            genreString += when(genresList[i]) {
+                28 -> "Action"
+                12 -> "Adventure"
+                16 -> "Animation"
+                35 -> "Comedy"
+                80 -> "Crime"
+                18 -> "Drama"
+                10751 -> "Family"
+                14 -> "Fantasy"
+                27 -> "Horror"
+                9648 -> "Mystery"
+                10749 -> "Romance"
+                878 -> "Science Fiction"
+                53 -> "Thriller"
+                else -> ""
+            }
+        }
+    }
+
+    //set the textview to display the final string we just built
+    genreTextView.text = genreString
 }

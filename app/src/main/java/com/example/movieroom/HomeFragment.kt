@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.movieroom.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -34,7 +36,10 @@ class HomeFragment : Fragment() {
         binding.homeViewModel = viewModel
 
         //set the recyclerview adapter
-        binding.trendingRecyclerView.adapter = DisplayMoviesAdapter()
+        //and add on click listener that passes the selected movie to displayMovieDetails function
+        binding.trendingRecyclerView.adapter = DisplayMoviesAdapter(DisplayMoviesAdapter.OnClickListener {
+            viewModel.displayMovieDetails(it)
+        })
 
         //set onClickListener for all discover buttons
         binding.actionButton.setOnClickListener(discoverButtonClickListener)
@@ -49,6 +54,15 @@ class HomeFragment : Fragment() {
         binding.mysteryButton.setOnClickListener(discoverButtonClickListener)
         binding.thrillerButton.setOnClickListener(discoverButtonClickListener)
         binding.romanceButton.setOnClickListener(discoverButtonClickListener)
+
+        //observer for navigateToSelectedMovie that triggers navigation when it's not null
+        //and then calls displayMovieDetailsComplete to avoid extra unwanted navigation
+        viewModel.navigateToSelectedMovie.observe(viewLifecycleOwner, Observer {
+            if(null != it) {
+                this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMovieDetailsFragment(it))
+                viewModel.displayMovieDetailsComplete()
+            }
+        })
 
         return binding.root
     }

@@ -2,6 +2,7 @@
     <string name="app_name">Movie Room</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_details">Movie Details</string>
     <string name="trending">Trending</string>
     <string name="placeholder">Placeholder</string>
     <string name="discover">Discover</string>

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieroom.databinding.DisplayMoviesListItemBinding
 
-class DisplayMoviesAdapter :ListAdapter<Movie, DisplayMoviesAdapter.MovieViewHolder>(DiffCallback) {
+class DisplayMoviesAdapter(private val onClickListener : OnClickListener) :ListAdapter<Movie, DisplayMoviesAdapter.MovieViewHolder>(DiffCallback) {
 
     //companion object so that a reference to the class isn't needed to access it
     companion object DiffCallback : DiffUtil.ItemCallback<Movie>() {
@@ -42,6 +42,17 @@ class DisplayMoviesAdapter :ListAdapter<Movie, DisplayMoviesAdapter.MovieViewHol
     override fun onBindViewHolder(holder: DisplayMoviesAdapter.MovieViewHolder, position: Int) {
         val movie = getItem(position)
         holder.bind(movie)
+
+        //setup onClickListener and pass the movie on button click
+        holder.itemView.setOnClickListener{
+            onClickListener.onClick(movie)
+        }
+    }
+
+    // create an internal OnClickListener class with a lambda in its constructor
+    // that initializes a matching onClick function
+    class OnClickListener(val clickListener : (movie : Movie) -> Unit) {
+        fun onClick(movie : Movie) = clickListener(movie)
     }
 
 }

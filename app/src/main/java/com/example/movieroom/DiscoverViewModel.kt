@@ -19,10 +19,30 @@ class DiscoverViewModel(val genre: Genre) : ViewModel() {
     val status : LiveData<MovieApiStatus>
         get() = _status
 
+    //livedata for navigating to the selected movie details screen
+    private var _navigateToSelectedMovie = MutableLiveData<Movie>()
+    val navigateToSelectedMovie : LiveData<Movie>
+        get() = _navigateToSelectedMovie
+
+
+    //method that takes the selected movie and sets it to _navigateToSelectedMovie livedata
+    //to start the navigation process
+    fun displayMovieDetails(movie : Movie) {
+        _navigateToSelectedMovie.value = movie
+    }
+
+    //when the navigation process is complete we want to set our _navigateToSelectedMovie
+    //to null to prevent any extra unwanted navigation
+    fun displayMovieDetailsComplete() {
+        _navigateToSelectedMovie.value = null
+    }
+
+    //when the discover fragment is on screen get movies to display
     init {
         getMovies()
     }
 
+    //function for fetching movie based on selected genre
     private fun getMovies() {
         // Coroutine that will be canceled when the ViewModel is cleared.
         viewModelScope.launch {

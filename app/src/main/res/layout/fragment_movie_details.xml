@@ -1,196 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".MovieDetailsFragment">
 
+    <data>
+        <variable
+            name="detailsViewModel"
+            type="com.example.movieroom.MovieDetailsViewModel" />
+    </data>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:contentDescription="@string/movie_poster"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/nameTextView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:contentDescription="@string/movie_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:text="The Office" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/genreTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="italic"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/movie_genre"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-        tools:layout_editor_absoluteX="0dp"
-        tools:text="Action, Drama, Thriller" />
-
-
-    <TextView
-        android:id="@+id/releaseDateTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/movie_release_date"
-        app:layout_constraintTop_toBottomOf="@+id/genreTextView"
-        tools:text="2014" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/releaseDateTextView"
-        tools:layout_editor_absoluteY="240dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/language"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/language" />
-
-            <TextView
-                android:id="@+id/languageTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/movie_language"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="English" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/votingAvg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/voting_average" />
-
-            <TextView
-                android:id="@+id/votingAvgTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/movie_voting_average"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="8.9" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/voteCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/vote_count" />
-
-            <TextView
-                android:id="@+id/voteCountTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/movie_voting_count"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="5600" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/overview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/overview"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <ScrollView
-        android:id="@+id/overviewScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/wantButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overview">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="16dp"
+            imageUrl="@{@string/fullImageUrl(detailsViewModel.selectedMovie.posterUrl)}"
+            android:contentDescription="@string/movie_poster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/overviewTextView"
+            android:id="@+id/nameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/movie_description"
-            tools:text="A team of allied saboteurs are assigned an impossible mission: infiltrate an impregnable Nazi-held island and destroy the two enormous long-range field guns that prevent the rescue of 2,000 trapped British soldiers. A team of allied saboteurs are assigned an impossible mission: infiltrate an impregnable Nazi-held island and destroy the two enormous long-range field guns that prevent the rescue of 2,000 trapped British soldiers. A team of allied saboteurs are assigned an impossible mission: infiltrate an impregnable Nazi-held island and destroy the two enormous long-range field guns that prevent the rescue of 2,000 trapped British soldiers." />
-    </ScrollView>
+            android:layout_margin="16dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:text="@{detailsViewModel.selectedMovie.title}"
+            android:contentDescription="@string/movie_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:text="The Office" />
+
+        <TextView
+            android:id="@+id/genreTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            movieGenres="@{detailsViewModel.selectedMovie.genre}"
+            android:textStyle="italic"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/movie_genre"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+            tools:layout_editor_absoluteX="0dp"
+            tools:text="Action, Drama, Thriller" />
 
 
-    <Button
-        android:id="@+id/wantButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/want"
-        android:contentDescription="@string/want_movie"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/watchedButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/releaseDateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{detailsViewModel.selectedMovie.releaseDate}"
+            android:contentDescription="@string/movie_release_date"
+            app:layout_constraintTop_toBottomOf="@+id/genreTextView"
+            tools:text="2014" />
 
-    <Button
-        android:id="@+id/watchedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/watched"
-        android:contentDescription="@string/watched_movie"
-        app:layout_constraintBaseline_toBaselineOf="@+id/wantButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/wantButton" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/releaseDateTextView"
+            tools:layout_editor_absoluteY="240dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/language" />
+
+                <TextView
+                    android:id="@+id/languageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@{detailsViewModel.selectedMovie.language}"
+                    android:contentDescription="@string/movie_language"
+                    tools:text="English" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/votingAvg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/voting_average" />
+
+                <TextView
+                    android:id="@+id/votingAvgTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@{String.valueOf(detailsViewModel.selectedMovie.votingAvg)}"
+                    android:contentDescription="@string/movie_voting_average"
+                    tools:text="8.9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/voteCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vote_count" />
+
+                <TextView
+                    android:id="@+id/voteCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@{String.valueOf(detailsViewModel.selectedMovie.voteCount)}"
+                    android:contentDescription="@string/movie_voting_count"
+                    tools:text="5600" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/overview"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <ScrollView
+            android:id="@+id/overviewScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/wantButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/overview">
+
+            <TextView
+                android:id="@+id/overviewTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{detailsViewModel.selectedMovie.overview}"
+                android:contentDescription="@string/movie_description"
+                tools:text="A team of allied saboteurs are assigned an impossible mission: infiltrate an impregnable Nazi-held island and destroy the two enormous long-range field guns that prevent the rescue of 2,000 trapped British soldiers. A team of allied saboteurs are assigned an impossible mission: infiltrate an impregnable Nazi-held island and destroy the two enormous long-range field guns that prevent the rescue of 2,000 trapped British soldiers. A team of allied saboteurs are assigned an impossible mission: infiltrate an impregnable Nazi-held island and destroy the two enormous long-range field guns that prevent the rescue of 2,000 trapped British soldiers." />
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/wantButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/want"
+            android:contentDescription="@string/want_movie"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/watchedButton"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/watchedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/watched"
+            android:contentDescription="@string/watched_movie"
+            app:layout_constraintBaseline_toBaselineOf="@+id/wantButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/wantButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

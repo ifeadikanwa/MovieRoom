@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.movieroom.databinding.FragmentDiscoverBinding
 
 
@@ -44,8 +46,19 @@ class DiscoverFragment : Fragment() {
         binding.discoverViewModel = viewModel
 
         //set the recyclerview adapter
-        binding.discoverRecyclerView.adapter = DisplayMoviesAdapter()
+        binding.discoverRecyclerView.adapter = DisplayMoviesAdapter(DisplayMoviesAdapter.OnClickListener {
+            viewModel.displayMovieDetails(it)
+        })
 
+        //observer for navigateToSelectedMovie that triggers navigation when it's not null
+        //and then calls displayMovieDetailsComplete to avoid extra unwanted navigation
+        viewModel.navigateToSelectedMovie.observe(viewLifecycleOwner, Observer {
+            if(null != it) {
+                this.findNavController().navigate(DiscoverFragmentDirections.actionDiscoverFragmentToMovieDetailsFragment(it))
+                viewModel.displayMovieDetailsComplete()
+            }
+        })
+        
         return binding.root
     }
 
