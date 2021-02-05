@@ -34,7 +34,7 @@
         tools:layout="@layout/fragment_discover" >
         <argument
             android:name="genre"
-            app:argType="com.example.movieroom.Genre" />
+            app:argType="com.example.movieroom.utils.Genre" />
         <action
             android:id="@+id/action_discoverFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment" />
