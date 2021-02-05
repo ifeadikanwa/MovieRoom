@@ -1,4 +1,4 @@
-package com.example.movieroom
+package com.example.movieroom.network
 
 enum class MovieApiStatus {
     LOADING,

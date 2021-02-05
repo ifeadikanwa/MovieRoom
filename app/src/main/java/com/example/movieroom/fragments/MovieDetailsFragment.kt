@@ -1,4 +1,4 @@
-package com.example.movieroom
+package com.example.movieroom.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.movieroom.fragments.MovieDetailsFragmentArgs
+import com.example.movieroom.viewmodels.MovieDetailsViewModel
+import com.example.movieroom.viewmodels.MovieDetailsViewModelFactory
+import com.example.movieroom.R
 import com.example.movieroom.databinding.FragmentMovieDetailsBinding
 
 class MovieDetailsFragment : Fragment() {

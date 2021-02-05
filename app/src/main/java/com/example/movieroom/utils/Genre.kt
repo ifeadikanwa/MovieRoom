@@ -1,4 +1,4 @@
-package com.example.movieroom
+package com.example.movieroom.utils
 
 enum class Genre {
     Action,

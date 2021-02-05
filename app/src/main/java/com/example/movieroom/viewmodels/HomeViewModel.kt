@@ -1,9 +1,12 @@
-package com.example.movieroom
+package com.example.movieroom.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.movieroom.Movie
+import com.example.movieroom.MovieApi
+import com.example.movieroom.network.MovieApiStatus
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.lang.Exception

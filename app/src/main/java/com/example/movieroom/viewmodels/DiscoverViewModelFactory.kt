@@ -1,7 +1,8 @@
-package com.example.movieroom
+package com.example.movieroom.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.movieroom.utils.Genre
 import java.lang.IllegalArgumentException
 
 //ViewModelFactory for DiscoverViewModel that takes in Genre enum object as an argument

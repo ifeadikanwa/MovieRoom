@@ -1,12 +1,12 @@
-package com.example.movieroom
+package com.example.movieroom.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.movieroom.R
 import com.example.movieroom.databinding.ActivityMainBinding
-import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding

@@ -1,7 +1,8 @@
-package com.example.movieroom
+package com.example.movieroom.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.movieroom.Movie
 import java.lang.IllegalArgumentException
 
 //ViewModelFactory for MovieDetailsViewModel that takes in movie object as an argument

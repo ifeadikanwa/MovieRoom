@@ -1,8 +1,9 @@
-package com.example.movieroom
+package com.example.movieroom.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.movieroom.Movie
 
 class MovieDetailsViewModel(movie : Movie) : ViewModel() {
     //LiveData for the selected movie to be displayed

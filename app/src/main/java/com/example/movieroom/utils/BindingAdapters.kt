@@ -8,6 +8,8 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.movieroom.adapters.DisplayMoviesAdapter
+import com.example.movieroom.network.MovieApiStatus
 
 //Binding adapter to take the url of an image and load it into the imageview with Glide
 @BindingAdapter("imageUrl")

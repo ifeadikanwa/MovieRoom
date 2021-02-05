@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".DiscoverFragment">
+    tools:context=".fragments.DiscoverFragment">
 
     <data>
         <variable
             name="discoverViewModel"
-            type="com.example.movieroom.DiscoverViewModel" />
+            type="com.example.movieroom.viewmodels.DiscoverViewModel" />
     </data>
 
     <LinearLayout

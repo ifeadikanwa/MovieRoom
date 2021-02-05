@@ -1,4 +1,4 @@
-package com.example.movieroom
+package com.example.movieroom.utils
 
 import android.app.Application
 import timber.log.Timber

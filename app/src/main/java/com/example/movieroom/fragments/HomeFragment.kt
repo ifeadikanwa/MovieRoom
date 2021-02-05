@@ -1,4 +1,4 @@
-package com.example.movieroom
+package com.example.movieroom.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.movieroom.*
+import com.example.movieroom.adapters.DisplayMoviesAdapter
 import com.example.movieroom.databinding.FragmentHomeBinding
+import com.example.movieroom.utils.Genre
+import com.example.movieroom.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
 

@@ -1,10 +1,11 @@
-package com.example.movieroom
+package com.example.movieroom.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movieroom.Movie
 import com.example.movieroom.databinding.DisplayMoviesListItemBinding
 
 class DisplayMoviesAdapter(private val onClickListener : OnClickListener) :ListAdapter<Movie, DisplayMoviesAdapter.MovieViewHolder>(DiffCallback) {
@@ -34,12 +35,12 @@ class DisplayMoviesAdapter(private val onClickListener : OnClickListener) :ListA
     }
 
     //create a view holder by inflating the list item binding
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DisplayMoviesAdapter.MovieViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         return MovieViewHolder(DisplayMoviesListItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     //we get the item and then pass it to the bind method in our view holder
-    override fun onBindViewHolder(holder: DisplayMoviesAdapter.MovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = getItem(position)
         holder.bind(movie)
 
